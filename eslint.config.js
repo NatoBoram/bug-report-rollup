@@ -71,6 +71,7 @@ export default tseslint.config(
 	{
 		ignores: [
 			".pnpm-store/",
+			".rollup.cache/",
 			"dist/",
 			"docs/",
 			"node_modules/",
