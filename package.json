@@ -1,20 +1,13 @@
 {
-	"name": "@natoboram/gigachad.ts",
+	"name": "@natoboram/bug-report-rollup",
 	"version": "0.0.0",
-	"description": "The most gigachad project setup for TypeScript.",
+	"description": "A bug report reproduction for Rollup",
 	"keywords": [
-		"dependabot",
-		"eslint",
-		"gigachad",
-		"markdownlint",
-		"prettier",
-		"project-template",
-		"typescript",
-		"vitest"
+		"rollup"
 	],
-	"homepage": "https://github.com/NatoBoram/gigachad.ts",
+	"homepage": "https://github.com/NatoBoram/bug-report-rollup",
 	"bugs": {
-		"url": "https://github.com/NatoBoram/gigachad.ts/issues"
+		"url": "https://github.com/NatoBoram/bug-report-rollup/issues"
 	},
 	"license": "Unlicense",
 	"author": {
@@ -36,32 +29,33 @@
 		"!dist/**/*.test.*"
 	],
 	"main": "dist/index.js",
-	"bin": {
-		"gigachad": "dist/main.js"
-	},
-	"repository": "github:NatoBoram/gigachad.ts",
+	"repository": "github:NatoBoram/bug-report-rollup",
 	"scripts": {
 		"build": "tsc",
 		"clean": "rm -rf dist docs node_modules tsconfig.tsbuildinfo",
 		"dev": "tsx ./src/main.ts",
-		"docker": "pnpm run docker:build && pnpm run docker:run",
-		"docker:build": "docker build -t gigachad.ts .",
-		"docker:kill": "docker ps --format '{{.Image}} {{.ID}}' | grep gigachad.ts | awk '{print $2}' | xargs docker kill",
-		"docker:run": "docker run gigachad.ts",
 		"docs": "typedoc",
 		"format": "prettier --write .",
 		"lint": "eslint . && markdownlint-cli2 \"**/*.md\" && prettier --check .",
 		"lint:fix": "eslint --fix --quiet .; markdownlint-cli2 \"**/*.md\" --fix; prettier --list-different --write .",
 		"start": "node dist/main.js",
-		"test": "vitest"
+		"test": "vitest",
+		"rollup": "rollup -c rollup.config.js"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.6.0",
+		"@rollup/plugin-commonjs": "^26.0.1",
+		"@rollup/plugin-json": "^6.1.0",
+		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@rollup/plugin-typescript": "^11.1.6",
+		"@types/node": "^20.14.9",
 		"eslint": "^9.6.0",
 		"eslint-config-prettier": "^9.1.0",
 		"globals": "^15.7.0",
 		"markdownlint-cli2": "^0.13.0",
 		"prettier": "^3.3.2",
+		"rollup": "^4.18.0",
+		"tslib": "^2.6.3",
 		"tsx": "^4.16.0",
 		"typedoc": "^0.26.3",
 		"typescript": "^5.5.3",

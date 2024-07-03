@@ -19,6 +19,9 @@ updates:
         update-types:
           - minor
         dependency-type: production
+      rollup:
+        patterns:
+          - "*rollup*"
       eslint:
         patterns:
           - "*eslint*"
@@ -30,6 +33,7 @@ updates:
           - "*typescript*"
           - tsx
           - typedoc
+          - tslib
 
   - package-ecosystem: github-actions
     directory: /
